@@ -14,8 +14,11 @@ function App() {
   const [lastCity, setLastCity] = useState("");
   const [bgClass, setBgClass] = useState("");
 
+  // ⭐ DEBUG LINE (temporary)
+  console.log("ENV KEY:", import.meta.env.VITE_API_KEY);
+
   const getBackground = (condition) => {
-    if (!condition) return "";
+    if (!condition) return "from-blue-300 via-sky-200 to-white";
 
     condition = condition.toLowerCase();
 
@@ -48,7 +51,6 @@ function App() {
       );
 
       setWeather(weatherResponse.data);
-
       setBgClass(getBackground(weatherResponse.data.weather[0].main));
 
       const forecastResponse = await axios.get(
@@ -60,8 +62,8 @@ function App() {
       );
 
       setForecast(dailyData);
-
-    } catch {
+    } catch (err) {
+      console.error("API ERROR:", err);
       setError("City not found or forecast unavailable");
     } finally {
       setLoading(false);
@@ -92,8 +94,8 @@ function App() {
       );
 
       setForecast(dailyData);
-
-    } catch {
+    } catch (err) {
+      console.error("LOCATION API ERROR:", err);
       setError("Location weather unavailable");
     } finally {
       setLoading(false);
