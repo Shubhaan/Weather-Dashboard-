@@ -1,3 +1,52 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* 🌤 CLEAR SKY */
+.bg-clear {
+  background: linear-gradient(-45deg, #56ccf2, #2f80ed, #6dd5fa, #2980b9);
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+}
+
+/* ☁ CLOUDS */
+.bg-clouds {
+  background: linear-gradient(-45deg, #bdc3c7, #2c3e50, #d7dde8, #757f9a);
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+}
+
+/* 🌧 RAIN */
+.bg-rain {
+  background: linear-gradient(-45deg, #2c3e50, #4ca1af, #1f4037, #99f2c8);
+  background-size: 400% 400%;
+  animation: gradientMove 10s ease infinite;
+}
+
+/* ❄ SNOW */
+.bg-snow {
+  background: linear-gradient(-45deg, #e6dada, #274046, #c9d6ff, #e2e2e2);
+  background-size: 400% 400%;
+  animation: gradientMove 14s ease infinite;
+}
+
+/* 🌩 THUNDER */
+.bg-thunder {
+  background: linear-gradient(-45deg, #232526, #414345, #000000, #434343);
+  background-size: 400% 400%;
+  animation: gradientMove 6s ease infinite;
+}
+
+/* 🌫 MIST */
+.bg-mist {
+  background: linear-gradient(-45deg, #757f9a, #d7dde8, #606c88, #3f4c6b);
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+}
+
+/* ANIMATION */
+@keyframes gradientMove {
+  0% { background-position: 0% 50% }
+  50% { background-position: 100% 50% }
+  100% { background-position: 0% 50% }
+}
